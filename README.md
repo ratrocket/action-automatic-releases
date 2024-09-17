@@ -1,6 +1,8 @@
 # GitHub Automatic Releases
 
-This action simplifies the GitHub release process by automatically uploading assets, generating changelogs, handling pre-releases, and so on.
+This action simplifies the GitHub release process by automatically
+uploading assets, generating changelogs, handling pre-releases, and so
+on.
 
 ## Contents
 
@@ -15,12 +17,16 @@ This action simplifies the GitHub release process by automatically uploading ass
 
 ### Automatically generate a pre-release when changes land on master
 
-This example workflow will kick in as soon as changes land on `master`. After running the steps to build and test your project:
+This example workflow will kick in as soon as changes land on `master`.
+After running the steps to build and test your project:
 
 1. It will create (or replace) a git tag called `latest`.
-1. Generate a changelog from all the commits between this, and the previous `latest` tag.
-1. Generate a new release associated with the `latest` tag (removing any previous associated releases).
-1. Update this new release with the specified title (e.g. `Development Build`).
+1. Generate a changelog from all the commits between this, and the
+   previous `latest` tag.
+1. Generate a new release associated with the `latest` tag (removing any
+   previous associated releases).
+1. Update this new release with the specified title (e.g. `Development
+   Build`).
 1. Upload `LICENSE.txt` and any `jar` files as release assets.
 1. Mark this release as a `pre-release`.
 
@@ -46,7 +52,7 @@ jobs:
         run: |
           echo "done!"
 
-      - uses: "slord399/action-automatic-releases@v1.0.1"
+      - uses: "ratrocket/action-automatic-releases@v1.0.1"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
@@ -78,7 +84,7 @@ jobs:
         run: |
           echo "done!"
 
-      - uses: "slord399/action-automatic-releases@v1.0.1"
+      - uses: "ratrocket/action-automatic-releases@v1.0.1"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
@@ -89,13 +95,16 @@ jobs:
 
 ### Create a new GitHub release when tags are pushed to the repository
 
-Similar to the previous example, this workflow will kick in as soon as new tags are pushed to GitHub. After building & testing your project:
+Similar to the previous example, this workflow will kick in as soon as
+new tags are pushed to GitHub. After building & testing your project:
 
-1. Generate a changelog from all the commits between this and the previous [semver-looking](https://semver.org/) tag.
+1. Generate a changelog from all the commits between this and the
+   previous [semver-looking](https://semver.org/) tag.
 1. Generate a new release and associate it with this tag.
 1. Upload `LICENSE.txt` and any `jar` files as release assets.
 
-Once again there's an example of this over at [marvinpinto/actions](https://github.com/marvinpinto/actions/releases/latest).
+Once again there's an example of this over at
+[marvinpinto/actions](https://github.com/marvinpinto/actions/releases/latest).
 
 ```yaml
 ---
@@ -117,7 +126,7 @@ jobs:
         run: |
           echo "done!"
 
-      - uses: "slord399/action-automatic-releases@v1.0.1"
+      - uses: "ratrocket/action-automatic-releases@v1.0.1"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
@@ -149,24 +158,40 @@ The following output values can be accessed via `${{ steps.<step-id>.outputs.<ou
 ### Notes:
 
 - Parameters denoted with `**` are required.
-- The `files` parameter supports multi-line [glob](https://github.com/isaacs/node-glob) patterns, see repository examples.
+- The `files` parameter supports multi-line
+  [glob](https://github.com/isaacs/node-glob) patterns, see repository
+  examples.
 
 ## Event Triggers
 
-The GitHub Actions framework allows you to trigger this (and other) actions on _many combinations_ of events. For example, you could create specific pre-releases for release candidate tags (e.g `*-rc*`), generate releases as changes land on master (example above), nightly releases, and much more. Read through [Workflow syntax for GitHub Actions](https://help.github.com/en/articles/workflow-syntax-for-github-actions) for ideas and advanced examples.
+The GitHub Actions framework allows you to trigger this (and other)
+actions on _many combinations_ of events. For example, you could create
+specific pre-releases for release candidate tags (e.g `*-rc*`), generate
+releases as changes land on master (example above), nightly releases,
+and much more. Read through [Workflow syntax for GitHub
+Actions](https://help.github.com/en/articles/workflow-syntax-for-github-actions)
+for ideas and advanced examples.
 
 ## Versioning
 
-If you wish to live on the bleeding edge you may use a stable release instead. See [releases](../../releases/latest) for the available versions.
+If you wish to live on the bleeding edge you may use a stable release
+instead. See [releases](../../releases/latest) for the available
+versions.
 
 ```yaml
-- uses: "slord399/action-automatic-releases@<VERSION>"
+- uses: "ratrocket/action-automatic-releases@<VERSION>"
 ```
 
 ## How to get help
 
-The main [README](https://github.com/marvinpinto/actions/blob/master/README.md) for this project has a bunch of information related to debugging & submitting issues. If you're still stuck, try and get a hold of me on [keybase](https://keybase.io/marvinpinto) and I will do my best to help you out.
+The main
+[README](https://github.com/marvinpinto/actions/blob/master/README.md)
+for this project has a bunch of information related to debugging &
+submitting issues. ~~If you're still stuck, try and get a hold of me on
+[keybase](https://keybase.io/marvinpinto) and I will do my best to help
+you out.~~
 
 ## License
 
-The source code for this project is released under the [MIT License](/LICENSE). This project is not associated with GitHub.
+The source code for this project is released under the [MIT
+License](/LICENSE). This project is not associated with GitHub.
