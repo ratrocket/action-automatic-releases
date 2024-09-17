@@ -1,5 +1,15 @@
 # GitHub Automatic Releases
 
+## Note
+
+This is my fork of
+[marvinpinto/action-automatic-releases](https://github.com/marvinpinto/action-automatic-releases)
+with patches from what just happened to be the latest fork at the time,
+[slord399/action-automatic-releases](https://github.com/slord399/action-automatic-releases).
+It worked with the patches, so I went with it.
+
+## Resume (mostly) original README
+
 This action simplifies the GitHub release process by automatically
 uploading assets, generating changelogs, handling pre-releases, and so
 on.

@@ -1,0 +1,21 @@
+name: "tag-latest"
+
+on:
+  push:
+    branches:
+      master
+
+jobs:
+  tag-latest:
+    name: "Tag latest"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: "fake it"
+        run: echo "ok"
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: false
