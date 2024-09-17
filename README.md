@@ -62,7 +62,7 @@ jobs:
         run: |
           echo "done!"
 
-      - uses: "ratrocket/action-automatic-releases@v1.0.1"
+      - uses: "ratrocket/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
@@ -94,7 +94,7 @@ jobs:
         run: |
           echo "done!"
 
-      - uses: "ratrocket/action-automatic-releases@v1.0.1"
+      - uses: "ratrocket/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
@@ -136,7 +136,7 @@ jobs:
         run: |
           echo "done!"
 
-      - uses: "ratrocket/action-automatic-releases@v1.0.1"
+      - uses: "ratrocket/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
